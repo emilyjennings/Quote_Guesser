@@ -9,9 +9,11 @@
 7. discover objects
 8. program
 
-A CLI that is a guessing game, using two different quote websites
+user types quote-guesser
 
-The user gets a quote, and they have to guess whether the quote was by Adam Neumann or RuPaul
+The user gets a random quote
+
+They have to guess whether the quote was by typing Adam Neumann or RuPaul
 
 scrapes https://www.brainyquote.com/authors/adam_neumann and https://www.brainyquote.com/authors/rupaul
 

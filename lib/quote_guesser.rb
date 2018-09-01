@@ -1,5 +1,2 @@
-require "quote_guesser/version"
-
-module QuoteGuesser
-  # Your code goes here...
-end
+require_relative "./quote_guesser/version"
+require_relative './quote_guesser/cli'
