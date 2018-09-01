@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require './lib/quote_guesser'
+
+QuoteGuesser::CLI.new.call
