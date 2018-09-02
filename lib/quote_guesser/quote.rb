@@ -1,34 +1,32 @@
 class QuoteGuesser::Quote
-  attr_accessor :author, :content, :url
+  attr_accessor :author, :content, :url, :adam_quotes, :rupaul_quotes
+  @@quotes = []
+
   def self.random
-    #should return a random quote from one of the websites by scraping
-
-    puts "'I served in the Isreali Navy, and it's not an easy thing.'"
-
-    quote_1 = self.new
-    quote_1.author = "Adam Neumann"
-    quote_1.content = "I served in the Isreali Army"
-    quote_1.url = "https://www.brainyquote.com/authors/adam_neumann"
-
-    quote_2 = self.new
-    quote_2.author = "RuPaul"
-    quote_2.content = "We're all born naked and the rest is drag."
-    quote_2.url = "https://www.brainyquote.com/authors/rupaul"
-
-    [quote_1, quote_2]
+    self.scrape_quotes.flatten.sample
   end
 
-  def scrape_quotes
-    quotes = []
-
-    quotes << self.scrape_adam
-    #go to the website, find the product, extract the properties, instantiate a deal, then other website
-    #need to end up with an array of quotes scraped
-    quotes
+  def self.scrape_quotes
+    @@quotes << self.scrape_adam
+    @@quotes << self.scrape_rupaul
   end
 
   def self.scrape_adam
+    #is it better in instantiate each object as a quote with an author in their own class?
+    #this quote class can then just handle making all the quotes go in a big array. later, iterate through them and match quotes with authors in their own arrays
+    #anyway, these two methods can first put all quotes into a big array. worry about matching the authors later
+    @adam_quotes = []
     doc = Nokogiri::HTML(open("https://www.brainyquote.com/authors/adam_neumann"))
-    doc.search("div.clearfix a.b-qt").map {|q| q.text}.sample
+    @adam_quotes = doc.search("div.clearfix a.b-qt").map {|q| q.text}
+    @adam_quotes
   end
+
+  def self.scrape_rupaul
+    @rupaul_quotes = []
+    doc = Nokogiri::HTML(open("https://www.brainyquote.com/authors/rupaul"))
+    @rupaul_quotes = doc.search("div.clearfix a.b-qt").map {|q| q.text}
+    @rupaul_quotes
+  end
+
+
 end
