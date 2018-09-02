@@ -9,10 +9,10 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Emily Jennings"]
   spec.email         = ["emily.jennings.elizabeth@gmail.com"]
 
-  spec.summary       = {A quote guessing game}
-  spec.description   = {"A game that allows a user to guess who said a certain quote"}
-  spec.homepage      = {"https://github.com/emilyjennings/Quote_Guesser"}
-  spec.license       = {"MIT"}
+  spec.summary       = "A quote guessing game"
+  spec.description   = "A game that allows a user to guess who said a certain quote"
+  spec.homepage      = "https://github.com/emilyjennings/Quote_Guesser"
+  spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
