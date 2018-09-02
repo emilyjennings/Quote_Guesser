@@ -11,4 +11,4 @@ require "quote_guesser"
 # Pry.start
 
 require "irb"
-IRB.start
+IRB.start(_FILE_)
