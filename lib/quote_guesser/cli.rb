@@ -1,5 +1,5 @@
 class QuoteGuesser::CLI
-  attr_accessor :author
+  attr_accessor :author, :quote
 
   def call
     puts "Random Quote:"
@@ -11,6 +11,7 @@ class QuoteGuesser::CLI
     #scrapes https://www.brainyquote.com/authors/adam_neumann and https://www.brainyquote.com/authors/rupaul
     puts "I served in the Isreali Navy, and it's not an easy thing."
     @author = "Adam Neumann"
+    @quote = QuoteGuesser::Quote.random
   end
 
   def user_guess
