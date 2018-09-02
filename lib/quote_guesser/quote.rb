@@ -18,10 +18,17 @@ class QuoteGuesser::Quote
     [quote_1, quote_2]
   end
 
-  # def scrape_quotes
-  #   quotes = []
-  #   #go to the website, find the product, extract the properties, instantiate a deal, then other website
-  #   #need to end up with an array of things scraped
-  #   quotes
-  # end
+  def scrape_quotes
+    quotes = []
+
+    quotes << self.scrape_adam
+    #go to the website, find the product, extract the properties, instantiate a deal, then other website
+    #need to end up with an array of quotes scraped
+    quotes
+  end
+
+  def self.scrape_adam
+    doc = Nokogiri::HTML(open("https://www.brainyquote.com/authors/adam_neumann"))
+    doc.search("div.clearfix a.b-qt").map {|q| q.text}.sample
+  end
 end
