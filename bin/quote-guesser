@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require './lib/quote_guesser'
-
+require "bundler/setup"
+require "quote_guesser"
 
 QuoteGuesser::CLI.new.call
