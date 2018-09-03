@@ -1,16 +1,16 @@
 class QuoteGuesser::Quote
+  #schould be "scraper" class and the author class needs to be the "quote" class which also assigns authors
   attr_accessor :author, :content, :given_quote, :quote
   @@quotes = []
   @@rupaul_quotes = []
   @@adam_quotes = []
 
   def initialize
+    #this needs to initilaize each quote as an object stored in an @@all kind of array
+    #should take the individual quotes in the arrays and assign the text as the "content"
+    #maybe this class is actually a Scraper class?
     @@quotes << self
   end
-  #later maybe create an object for quotes and one for authors.
-  #they collaborate by an author being either RuPaul or Adam, associated only with those arrays. need three methods?
-  #the quotes are assigned an author depending on one of th arrays they're in
-  #then the player enters a guess and if the quote's author matches, it's correct. Iteration happens at a different point - in Author class
 
   def self.random_quote
     self.scrape_quotes.flatten.sample
