@@ -22,13 +22,23 @@ class QuoteGuesser::CLI
 
     if input.to_i == 1 && Quote.find_author == "Adam Neumann"
       puts "Correct!"
-      puts "Would you like another quote? y/n"
-      input = gets.strip
-      if input == "y"
-        call
-      else
-        nil
-      end
+      another_quote
+    elsif input.to_i == 2 && Quote.find_author == "RuPaul"
+      puts "Correct!"
+      another_quote
+    elsif input == "bio"
+      read_bio
+    else
+      puts "Incorrect!"
+      another_quote
+    end
+  end
+
+  def another_quote
+    puts "Would you like another quote? y/n"
+    input = gets.strip
+    if input == "y"
+      call
     else
       nil
     end
