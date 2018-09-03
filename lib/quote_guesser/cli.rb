@@ -1,17 +1,20 @@
 class QuoteGuesser::CLI
   attr_accessor :quotes, :given_quote, :scraper
 
+  # def initialize
+  #   call
+  # end
+
+
+  # def give_quote
+  #
+  #   @given_quote
+  #   binding.pry
+  # end
+
   def call
-    puts "Random Quote: '#{give_quote}'"
-    user_guess
-  end
-
-  def give_quote
     @given_quote = QuoteGuesser::Quotes.random_quote
-    @given_quote
-  end
-
-  def user_guess
+    puts "Random Quote: '#{given_quote.quote}'"
 
     puts "Is this a quote by RuPaul or Adam Neumann? Type '1' for Adam Neumann and type '2' for RuPaul. If you'd like to first see a bio of the authors, type bio."
     input = gets.strip
