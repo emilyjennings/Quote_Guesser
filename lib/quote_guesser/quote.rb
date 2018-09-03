@@ -1,5 +1,5 @@
 class QuoteGuesser::Quote
-  attr_accessor :author, :content, :given_quote
+  attr_accessor :author, :content, :given_quote, :quote
   @@quotes = []
   @@rupaul_quotes = []
   @@adam_quotes = []
@@ -38,9 +38,9 @@ class QuoteGuesser::Quote
     @@rupaul_quotes
   end
 
-  def self.find_author
-    @given_quote = self.random_quote
-    if self.scrape_rupaul.any?{|q| q == @given_quote}
+  def self.find_author(quote)
+    #@quote = self.random_quote
+    if self.scrape_rupaul.any?{|q| q == @quote}
       "RuPaul"
     else
       "Adam Neumann"
