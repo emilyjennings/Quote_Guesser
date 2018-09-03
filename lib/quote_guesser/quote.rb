@@ -8,18 +8,18 @@ class QuoteGuesser::Quote
     @author = author
     @content = content
     @@quotes << self
-
+    #do I need this?
     #maybe all objects should have their authors on initialization
     #then you just iterate over the larger array to find the author name
   end
 
-  def self.assigns_content
-    @content = self.random_quote
-  end
-
-  def assigns_author
-    @author = self.find_author
-  end
+  # def self.assigns_content
+  #   @content = self.random_quote
+  # end
+  #
+  # def assigns_author
+  #   @author = self.find_author
+  # end
 
   def self.random_quote
     self.scrape_quotes.flatten.sample
