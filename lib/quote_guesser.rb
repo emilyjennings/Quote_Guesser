@@ -3,6 +3,6 @@ require 'pry'
 require 'open-uri'
 
 require_relative "./quote_guesser/version"
-require_relative "./quote_guesser/quote"
+require_relative "./quote_guesser/scraper"
 require_relative './quote_guesser/cli'
-require_relative './quote_guesser/author'
+require_relative './quote_guesser/quotes'

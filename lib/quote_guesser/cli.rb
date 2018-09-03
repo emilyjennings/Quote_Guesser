@@ -1,5 +1,5 @@
 class QuoteGuesser::CLI
-  attr_accessor :quote, :given_quote
+  attr_accessor :quotes, :given_quote, :scraper
 
   def call
     puts "Random Quote: '#{give_quote}'"
@@ -7,7 +7,7 @@ class QuoteGuesser::CLI
   end
 
   def give_quote
-    @given_quote = QuoteGuesser::Quote.random_quote
+    @given_quote = QuoteGuesser::Quotes.random_quote
     @given_quote
   end
 
@@ -16,7 +16,7 @@ class QuoteGuesser::CLI
     puts "Is this a quote by RuPaul or Adam Neumann? Type '1' for Adam Neumann and type '2' for RuPaul. If you'd like to first see a bio of the authors, type bio."
     input = gets.strip
 
-    if input.to_i == 1 && QuoteGuesser::Quote.find_author(given_quote) == "Adam Neumann" || input.to_i == 2 && QuoteGuesser::Quote.find_author(given_quote) == "RuPaul"
+    if input.to_i == 1 && @given_quote.author == "Adam Neumann" || input.to_i == 2 && @given_quote.author == "RuPaul"
       puts "Correct!"
       another_quote
     elsif input == "bio"
