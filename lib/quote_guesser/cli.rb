@@ -1,14 +1,14 @@
 class QuoteGuesser::CLI
-  attr_accessor :author, :quote
+  attr_accessor :quote
 
   def call
     puts "Random Quote:"
-    give_quote
+    QuoteGuesser::Quote.random_quote
     user_guess
   end
 
   def give_quote
-    @quote = QuoteGuesser::Quote.random
+    QuoteGuesser::Quote.random_quote
   end
 
   #somewhere in the if statements below that determine if an answer is correct,
@@ -43,34 +43,6 @@ class QuoteGuesser::CLI
       nil
     end
   end
-
-
-
-  #   if input.to_i == 1
-  #     puts "Correct!"
-  #     puts "Would you like another quote? y/n"
-  #     input = gets.strip
-  #     if input == "y"
-  #       call
-  #     else
-  #       nil
-  #     end
-  #   elsif input.to_i == 2
-  #     puts "Wrong!"
-  #     puts "Would you like another quote? y/n"
-  #     input = gets.strip
-  #     if input == "y"
-  #       call
-  #     else
-  #       nil
-  #     end
-  #   elsif input == "bio"
-  #     read_bio
-  #   else
-  #     puts "Command not recognized. Please try again."
-  #     call
-  #   end
-  # end
 
   def read_bio
     puts "Here are bios about the authors:"
