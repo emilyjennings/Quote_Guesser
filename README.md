@@ -37,7 +37,7 @@ returns true or false
 
 blog:
 I discovered my ruby version wasn't up to date so found these isntructions: http://codingpad.maryspad.com/2017/04/29/update-mac-os-x-to-the-current-version-of-ruby/
-I set up the CLI file and a class to match what the interface will do with the user by watching the walkthrough video closely. I am doing this on my own atom editor instead of the IDE. I initialized git and made my first commit, remembering to commit every so often and psuh to my github account.
+I set up the CLI file and a class to match what the interface will do with the user by watching the walkthrough video closely. I am doing this on my own atom editor instead of the IDE. I initialized git and made my first commit, remembering to commit every so often and push to my github account.
 
 I made the shell of the program in the class QuoteGuesser::CLI to include a call method that gets the whole interface started and asks the user to guess who said the quote given, and if they are wrong, the option to keep trying to guess. They can also see a bio of the authors.
 
@@ -59,7 +59,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Use this as a fun guessing game for students in a classroom for motivational quotes, or for employees of wework to enjoy the thoughts of our CEO
 
 ## Development
 
@@ -69,7 +69,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/quote_guesser. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/emilyjennings/quote_guesser. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 

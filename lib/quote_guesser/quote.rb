@@ -5,21 +5,12 @@ class QuoteGuesser::Quote
   @@adam_quotes = []
 
   def initialize
-    @author = author
-    @content = content
     @@quotes << self
-    #do I need this?
-    #maybe all objects should have their authors on initialization
-    #then you just iterate over the larger array to find the author name
   end
-
-  # def self.assigns_content
-  #   @content = self.random_quote
-  # end
-  #
-  # def assigns_author
-  #   @author = self.find_author
-  # end
+  #later maybe create an object for quotes and one for authors.
+  #they collaborate by an author being either RuPaul or Adam, associated only with those arrays. need three methods?
+  #the quotes are assigned an author depending on one of th arrays they're in
+  #then the player enters a guess and if the quote's author matches, it's correct. Iteration happens at a different point - in Author class
 
   def self.random_quote
     self.scrape_quotes.flatten.sample
