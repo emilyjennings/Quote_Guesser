@@ -1,16 +1,6 @@
 class QuoteGuesser::CLI
   attr_accessor :quotes, :given_quote, :scraper
 
-  # def initialize
-  #   call
-  # end
-
-
-  # def give_quote
-  #
-  #   @given_quote
-  #   binding.pry
-  # end
 
   def call
     @given_quote = QuoteGuesser::Quotes.random_quote
