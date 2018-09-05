@@ -20,7 +20,8 @@ class QuoteGuesser::Quotes
   end
 
   def self.random_quote
-    self.merge_quotes.flatten.sample
+    quote = self.merge_quotes.flatten.sample
+    quote
   end
 
   def self.all_rupaul_quotes

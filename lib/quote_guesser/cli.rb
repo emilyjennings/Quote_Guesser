@@ -9,7 +9,7 @@ class QuoteGuesser::CLI
 
     puts "Is this a quote by RuPaul or Adam Neumann? Type '1' for Adam Neumann and type '2' for RuPaul. If you'd like to first see a bio of the authors, type bio."
     input = gets.strip
-
+    #is something wrong with my conditionals here? Or I need to make an object that holds the same quote throughout the CLI
     if input.to_i == 1 && given_quote.author == "Adam Neumann" || input.to_i == 2 && given_quote.author == "RuPaul"
       puts "Correct!"
       another_quote
