@@ -1,14 +1,5 @@
 # QuoteGuesser
 
-1. Plan your gem, imagine interface
-2. Start with the project structure
-3. Start with the entry point - the file run
-4. Force that to build the CLI interface
-5. stub out the interface
-6. start making things real
-7. discover objects
-8. program
-
 Project Requirements
 Provide a CLI
 Your CLI application must provide access to data from a web page.
@@ -20,6 +11,8 @@ News reader - List articles and read an article of your choosing.
 Your CLI application should not be too similiar to the Ruby final projects (Music Library CLI, Tic-Tac-Toe with AI, Student Scraper). Also, please refrain from using Kickstarter as that was used for the scraping 'code along'.
 Use good OO design patterns. You should be creating a collection of objects, not hashes, to store your data. Pro Tip: Avoid scraping data more than once per web page - utilize objects you have already created. It will speed up your program!
 
+How this will work:
+
 user types quote-guesser
 
 The user gets a random quote
@@ -30,13 +23,13 @@ scrapes https://www.brainyquote.com/authors/adam_neumann and https://www.brainyq
 
 returns a random quote from one of the two websites
 
-the user has to type "RuPaul" or "adam neumann" to guess who it is
+the user has to enter "RuPaul" or "Adam Neumann" to guess who it is
 
-returns true or false
+returns correct or incorrect
 
 
-blog:
-I discovered my ruby version wasn't up to date so found these isntructions: http://codingpad.maryspad.com/2017/04/29/update-mac-os-x-to-the-current-version-of-ruby/
+Blog post:
+I discovered my ruby version wasn't up to date so found these instructions: http://codingpad.maryspad.com/2017/04/29/update-mac-os-x-to-the-current-version-of-ruby/
 I set up the CLI file and a class to match what the interface will do with the user by watching the walkthrough video closely. I am doing this on my own atom editor instead of the IDE. I initialized git and made my first commit, remembering to commit every so often and push to my github account.
 
 I made the shell of the program in the class QuoteGuesser::CLI to include a call method that gets the whole interface started and asks the user to guess who said the quote given, and if they are wrong, the option to keep trying to guess. They can also see a bio of the authors.
@@ -59,7 +52,9 @@ Or install it yourself as:
 
 ## Usage
 
-Use this as a fun guessing game for students in a classroom for motivational quotes, or for employees of wework to enjoy the thoughts of our CEO
+Use this as a fun guessing game for students in a classroom for motivational quotes, or for employees of wework to enjoy the thoughts of our CEO.
+
+Run this game by running `./bin/quote-guesser`
 
 ## Development
 
