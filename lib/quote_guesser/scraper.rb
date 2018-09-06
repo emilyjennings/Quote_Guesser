@@ -7,8 +7,7 @@ class QuoteGuesser::Scraper
 
   def self.scrape_rupaul
     doc = Nokogiri::HTML(open("https://www.brainyquote.com/authors/rupaul"))
-    @array = doc.search("div.clearfix a.b-qt").map {|q| q.text}
-    @array
+    doc.search("div.clearfix a.b-qt").map {|q| q.text}
   end
 
 

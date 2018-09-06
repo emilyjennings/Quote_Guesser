@@ -15,10 +15,6 @@ class QuoteGuesser::Quotes
     @@all
   end
 
-  def self.all
-    @@all
-  end
-
   def self.random_quote
     @random_quote = self.merge_quotes.flatten.sample
     @random_quote
