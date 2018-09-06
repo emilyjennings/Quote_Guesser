@@ -9,6 +9,7 @@ class QuoteGuesser::CLI
 
   def call
 
+    puts " "
     puts "-------------------------"
     puts "| Here's a Random Quote: |"
     puts "-------------------------"
@@ -16,12 +17,15 @@ class QuoteGuesser::CLI
     puts " "
 
     puts "Is this a quote by RuPaul or Adam Neumann? Type 'a' for Adam Neumann and type 'r' for RuPaul."
-        puts " "
+    puts " "
     puts "If you'd like to first see a bio of the authors, type bio. Type any other key to exit"
     input = gets.strip
+    puts " "
 
     if input == 'a' && @given_quote.author == "Adam Neumann" || input == 'r' && @given_quote.author == "Rupaul"
+      puts " "
       puts "Correct!"
+      puts " "
       another_quote
     elsif input == "bio"
       read_bio
