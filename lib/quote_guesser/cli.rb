@@ -28,7 +28,10 @@ class QuoteGuesser::CLI
     elsif input == "bio"
       read_bio
     else
-      nil
+      puts " "
+      puts "Incorrect!"
+      puts " "
+      another_quote
     end
   end
 
