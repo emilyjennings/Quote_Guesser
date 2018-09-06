@@ -1,33 +1,41 @@
 class QuoteGuesser::CLI
-  attr_accessor :given_quote
+
+  def initialize(given_quote)
+    @given_quote = given_quote
+    call
+  end
+
 
 
   def call
-    @given_quote = QuoteGuesser::Quotes.random_quote
-    puts "Random Quote: '#{@given_quote.quote}'"
+
+    puts "-------------------------"
+    puts "| Here's a Random Quote: |"
+    puts "-------------------------"
+    puts "'#{@given_quote.quote}'"
     puts " "
 
-    puts "Is this a quote by RuPaul or Adam Neumann? Type '1' for Adam Neumann and type '2' for RuPaul. If you'd like to first see a bio of the authors, type bio."
+    puts "Is this a quote by RuPaul or Adam Neumann? Type 'a' for Adam Neumann and type 'r' for RuPaul."
+        puts " "
+    puts "If you'd like to first see a bio of the authors, type bio. Type any other key to exit"
     input = gets.strip
-    #binding.pry
-    #is something wrong with my conditionals here? Or I need to make an object that holds the same quote throughout the CLI
-    #seems to be returning correct only for adamn neumann?
-    if (input.to_i == 1 && @given_quote.author == "Adam Neumann") || (input.to_i == 2 && @given_quote.author == "RuPaul")
+
+    if input == 'a' && @given_quote.author == "Adam Neumann" || input == 'r' && @given_quote.author == "Rupaul"
       puts "Correct!"
       another_quote
     elsif input == "bio"
       read_bio
     else
-      puts "Incorrect!"
-      another_quote
+      nil
     end
   end
 
   def another_quote
-    puts "Would you like another quote? y/n"
+    puts "Type 'q' for another quote."
+    puts "Type any other key to exit."
     input = gets.strip
-    if input == "y"
-      call
+    if input == "q"
+      initialize(QuoteGuesser::Quotes.random_quote)
     else
       nil
     end

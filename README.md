@@ -29,10 +29,16 @@ returns correct or incorrect
 
 
 Blog post:
-I discovered my ruby version wasn't up to date so found these instructions: http://codingpad.maryspad.com/2017/04/29/update-mac-os-x-to-the-current-version-of-ruby/
-I set up the CLI file and a class to match what the interface will do with the user by watching the walkthrough video closely. I am doing this on my own atom editor instead of the IDE. I initialized git and made my first commit, remembering to commit every so often and push to my github account.
+QuoteGuesser: My CLI Ruby Project
 
-I made the shell of the program in the class QuoteGuesser::CLI to include a call method that gets the whole interface started and asks the user to guess who said the quote given, and if they are wrong, the option to keep trying to guess. They can also see a bio of the authors.
+I finally came to the end of the Ruby section of my learning on Learn.co and I was overwhelmed when reading the description of the final project for it, thinking that I didn’t understand enouhg to truly set up and create an executable product. For anyone out there reading this facing similar imposter syndrome: you will be able to do this! I spent a day reading all the material about it and then dove right in to watching the walkthrough video by Avi. That cleared so much of it up, and I watched it again, pausing probably every minute, to set up my project structure just the way he did.
+
+I actually ran into a few roadblocks along the way there - including not being able to run my console using ./bin/console. But through some google searches I found that all I had to do was update my Ruby version. I found these instructions: http://codingpad.maryspad.com/2017/04/29/update-mac-os-x-to-the-current-version-of-ruby/
+
+As for the actual project: I didn’t want to create a simple CLI program that displays movie times or something. I wanted to make something fun. I used to be a teacher in South Korea, and I love to design silly games for my students to practice English while being challenged with something out of the ordinary. I also feel very inspired by both Adam Neumann, CEO of WeWork, and by RuPaul. So, I chose to scrape a quotes website (BrainyQuotes) and then have a random quote returned that the user has to guess which of these famous people said it. They’re both such interesting and surprising people, you actually might not be able to guess right away each time! I certainly had fun playing it myself, since I don’t know all the quotes from each of them. I would imagine someone could go to the BrainyQuotes website and find the same landing page for another famous person and change which page it scrapes, tailoring it for their own uses (again, picturing it to be used in a classroom.)
+
+Realized some things about classes and object collaboration: start with the object you want to be able to instantiate. If you have an object you create and then scrape, have it be object_name = object.new(url).scrape. Like writing an essay, it’s best to start with the end result - you want to scrape an object. I had trouble wrapping my head around this at first. The argument for instantiation can be a url to be scraped - in my case, a url either from rupaul or adam neumann. So, each object that’s supposed to be scraped has its own class. I started by having a scraper class and a class for all quotes, and the quotes need to be scraped. Since they have to be in a big list together eventually (so that a random one can be picked from a global array), the Quotes was the object that was scraped. At one time I had RuPaul and Adam quotes as separate classes, but that just didn’t seem to make sense.
+
 
 ## Installation
 
