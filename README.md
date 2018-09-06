@@ -39,6 +39,8 @@ As for the actual project: I didn’t want to create a simple CLI program that d
 
 Realized some things about classes and object collaboration: start with the object you want to be able to instantiate. If you have an object you create and then scrape, have it be object_name = object.new(url).scrape. Like writing an essay, it’s best to start with the end result - you want to scrape an object. I had trouble wrapping my head around this at first. The argument for instantiation can be a url to be scraped - in my case, a url either from rupaul or adam neumann. So, each object that’s supposed to be scraped has its own class. I started by having a scraper class and a class for all quotes, and the quotes need to be scraped. Since they have to be in a big list together eventually (so that a random one can be picked from a global array), the Quotes was the object that was scraped. At one time I had RuPaul and Adam quotes as separate classes, but that just didn’t seem to make sense.
 
+One of the concepts I struggled the most with was when to use an instance vs.s a class method. I think now I understand that the class methods are used to do something to the current object in the class, but the instance methods are used to talk to do things within the class that an instance doesn't need to know about. For instance, a method that changes the elements in an array in order to later do something to the object doesn't need to be a class method, but a method that you'll call on the object to get an output, like returning an attribute, is a class method.
+
 
 ## Installation
 

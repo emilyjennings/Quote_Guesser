@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 class QuoteGuesser::Quotes
-  attr_accessor :author, :quote, :scraper
+  attr_accessor :author, :quote
   @@all = []
 
   def initialize(quote)

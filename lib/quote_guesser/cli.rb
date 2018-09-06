@@ -5,8 +5,6 @@ class QuoteGuesser::CLI
     call
   end
 
-
-
   def call
 
     puts " "
