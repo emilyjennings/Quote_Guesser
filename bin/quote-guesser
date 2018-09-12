@@ -3,4 +3,4 @@
 require "bundler/setup"
 require "quote_guesser"
 
-QuoteGuesser::CLI.new(QuoteGuesser::Quotes.random_quote)
+QuoteGuesser::CLI.new.start

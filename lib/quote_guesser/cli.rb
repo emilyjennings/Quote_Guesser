@@ -1,11 +1,13 @@
 class QuoteGuesser::CLI
 
-  def initialize(given_quote)
-    @given_quote = given_quote
+  def start
+    QuoteGuesser::Scraper.scrape_rupaul
+    QuoteGuesser::Scraper.scrape_adam
     call
   end
 
   def call
+    @given_quote = QuoteGuesser::Quotes.random_quote
 
     puts " "
     puts "-------------------------"
@@ -27,6 +29,8 @@ class QuoteGuesser::CLI
       another_quote
     elsif input == "bio"
       read_bio
+    elsif input != 'a' && input != 'r'
+      nil
     else
       puts " "
       puts "Incorrect!"
@@ -40,7 +44,7 @@ class QuoteGuesser::CLI
     puts "Type any other key to exit."
     input = gets.strip
     if input == "q"
-      initialize(QuoteGuesser::Quotes.random_quote)
+      call
     else
       nil
     end
