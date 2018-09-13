@@ -1,8 +1,7 @@
 class QuoteGuesser::CLI
 
   def start
-    QuoteGuesser::Scraper.scrape_rupaul
-    QuoteGuesser::Scraper.scrape_adam
+    QuoteGuesser::Scraper.scrape_authors
     call
   end
 
@@ -22,7 +21,7 @@ class QuoteGuesser::CLI
     input = gets.strip
     puts " "
 
-    if input == 'a' && @given_quote.author == "Adam Neumann" || input == 'r' && @given_quote.author == "Rupaul"
+    if input == 'a' && @given_quote.author == "adam_neumann" || input == 'r' && @given_quote.author == "rupaul"
       puts " "
       puts "Correct!"
       puts " "
