@@ -14,5 +14,4 @@ class QuoteGuesser::Quotes
     @@all.sample
   end
 
-
 end
